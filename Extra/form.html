@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Form</title>
+</head>
+</body>
+
+<form action="" method="get">
+  <fieldset name="Topping">
+    <legend>Toppings:</legend>
+    <input type="checkbox" name="Topping" value="Mushrooms" />Mushrooms?
+    <input type="checkbox" name="Topping" value="Sausage" />Sausage?
+    <input type="checkbox" name="Topping" value="Olives" />Olives?
+  </fieldset>
+  <fieldset name="Crust">
+    <legend>Crust:</legend>
+    <input type="radio" name="Crust" value="Thin" required />Thin
+    <input type="radio" name="Crust" value="Thick" />Thick
+    <input type="radio" name="Crust" value="DeepDish" />Deep Dish
+  </fieldset>
+  <p>Addons:
+    <select name="Addons" required>
+            <option value="">Please select...</option>
+            <option value="None">Pizza only</option>
+            <optgroup label="Addons">
+                <option value="Wings">Side of Buffalo Wings</option>
+                <option value="GarlicBread">Add Garlic Bread</option>
+            </optgroup>
+        </select>
+  </p>
+  <select name="Toppings" multiple size="4">
+        <option label="Mushrooms?" value="Mushrooms" />
+        <option label="Sausage?" value="Sausage" />
+        <option label="Olives?" value="Olives" />
+    </select>
+  <p>Number of utensils:
+    <input type="number" min="1" max="4" value="1" name="Utensils" />
+  </p>
+  <p>Color:
+    <input type="color" name="Color" />
+  </p>
+  <p>Select file(s) to upload:
+    <input type="file" name="music" accept="audio/*" />
+    <input type="file" name="pictures" multiple accept="text/html, text/css" />
+  </p>
+  <datalist id="SurveyStops">
+        <option value="0" />
+        <option value="10" />
+        <option value="20" />
+        <option value="30" />
+        <option value="40" />
+        <option value="50" />
+    </datalist>
+  <p>How satisfied were you with the ordering process?
+    <input type="range" name="Survey" min="0" max="50" step="10" list="SurveyStops" />
+  </p>
+  <fieldset>
+    <legend>Date examples:</legend>
+    Date:
+    <input type="date" name="Date" min="2016-08-12" max="2016-08-21" placeholder="mm/dd/yy" /> Date/Time:
+    <input type="datetime-local" name="DateTime" step="30" placeholder="mm/dd/yy hh:mm:ss AM" /> Time:
+    <input type="time" name="Time" min="10:00:00" max="17:00:00" step="15" placeholder="hh:mm:ss AM" /> Month:
+    <input type="month" name="Month" min="2016-01-01" max="2017-12-31" placeholder="yyyy-mm" /> Week:
+    <input type="week" name="Week" min="2016-01-01" max="2017-12-31" placeholder="yyyy-W##" />
+  </fieldset>
+  <p>Deliver to: <br />
+    <label>
+            Address:
+            <input type="text" size="30" name="Address" />
+        </label>
+    <label>
+            ZipCode:
+            <input type="text" maxlength="5" size="5" name="Zip" />
+        </label>
+    <label for="telephone">Phone #:</label>
+    <input type="tel" id="telephone" name="Phone" />
+  </p>
+  <p>
+    <label>Total due:
+            <output id="total" name="Total">$0.00</output>
+        </label>
+  </p>
+  <fieldset>
+    <legend>Meter examples:</legend>
+    <meter min="0" max="100" low="33" high="65" optimum="66" value="25"></meter>
+    <meter min="0" max="100" low="33" high="65" optimum="66" value="50"></meter>
+    <meter min="0" max="100" low="33" high="65" optimum="66" value="75"></meter> Optimal: high<br />
+    <meter min="0" max="100" low="34" high="66" optimum="33" value="25"></meter>
+    <meter min="0" max="100" low="34" high="66" optimum="33" value="50"></meter>
+    <meter min="0" max="100" low="34" high="66" optimum="33" value="75"></meter> Optimal: low<br />
+    <meter min="0" max="100" low="32" high="66" optimum="33" value="25"></meter>
+    <meter min="0" max="100" low="32" high="66" optimum="33" value="50"></meter>
+    <meter min="0" max="100" low="32" high="66" optimum="33" value="75"></meter> Optimal: medium<br />
+  </fieldset>
+  <p>Progress example:
+    <progress min="0" max="7" value="3">
+            Your browser does not support the progress element! Value is 3 of 7.
+        </progress>
+  </p>
+  <fieldset>
+    <legend>Textual input:</legend>
+    <label for="iFirstName">First Name:</label>
+    <input id="iFirstName" name="FirstName" type="text" autocomplete="given-name" />
+    <label for="iLastName">Last Name:</label>
+    <input id="iLastName" name="LastName" value="Smith" type="text" autocomplete="family_name" />
+    <label for="iSport">Favorite Sport:</label>
+    <input type="text" id="iSport" name="Sport" list="sports" />
+
+    <input type="email" name="Email" size="100" placeholder="enter 1 or more email addresses" multiple required />
+    <input type="password" name="Password" maxlength="12" minlength="6" size="12" />
+    <input type="search" name="Search" placeholder="search criteria..." autofocus />
+    <input type="tel" name="Phone" placeholder="(800) 555-1212" pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$" />
+    <input type="url" name="Website" size="50" />
+    <input type="text" value="Read-only text" readonly name="ReadOnly" />
+    <input type="text" value="Disabled text" disabled />
+  </fieldset>
+  <label for="iComments">Comments:</label>
+  <textarea id="iComments" rows="3" cols="50" wrap="hard" maxlength="250" name="Comments">
+    </textarea>
+
+  <!--<input type="submit" value="Submit" />-->
+  <button type="submit">Submit</button>
+</form>
+</body>
+
+</html>

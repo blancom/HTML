@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Select Menus</title>
+<script>
+function validate(e){
+	var errors = [];
+	
+	if (!checkSelect(document.getElementById("flavor")) ) {
+		errors[errors.length] = "You must choose a flavor.";
+	}
+	
+	if (errors.length > 0) {
+		reportErrors(errors);
+		e.preventDefault();
+	}
+
+}
+
+function checkSelect(select){
+	return (select.selectedIndex > 0);
+}
+function reportErrors(errors){
+	var msg = "There were some problems...\n";
+	var numError;
+	for (var i=0; i<errors.length; i++) {
+		numError = i + 1;
+		msg += "\n" + numError + ". " + errors[i];
+	}
+	alert(msg);
+}
+
+window.onload = function() {
+	document.getElementById("flavorform").addEventListener("submit", function(e){
+    	validate(e);
+	});
+}
+</script>
+</head>
+<body>
+<h1>Ice Cream Form</h1>
+<form method="post" action="Process.html" id="flavorform">
+	<strong>Flavor:</strong>
+	<select name="flavor" id="flavor">
+		<option value="0" selected></option>
+		<option value="choc">Chocolate</option>
+		<option value="straw">Strawberry</option>
+		<option value="van">Vanilla</option>
+	</select>
+	<br><br>
+	<input type="submit" value="Place Order">
+</form>
+</body>
+</html>

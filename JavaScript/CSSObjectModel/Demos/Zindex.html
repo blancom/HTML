@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>zIndex</title>
+<link href="zindex.css" rel="stylesheet">
+<script>
+	var z = 0;
+	function changeZ(elem){
+		z += 10;
+		elem.style.zIndex = z;
+		elem.innerHTML = "z: " + z;
+	}
+
+	window.onload = function() {
+		var divRed = document.getElementById("divRed");
+		var divBlue = document.getElementById("divBlue");
+		divRed.addEventListener('click', function() {
+			changeZ(divRed);
+		});
+		divBlue.addEventListener('click', function() {
+			changeZ(divBlue);
+		});
+	};
+</script>
+</head>
+<body>
+	<div id="divRed"></div>
+	<div id="divBlue"></div>
+</body>
+</html>

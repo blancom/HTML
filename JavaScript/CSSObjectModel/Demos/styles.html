@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Styles</title>
+<link href="customstyles.css" rel="stylesheet">
+<script>
+	window.onload = function() {
+		document.getElementById("getstyles").addEventListener("click", function() {
+			var pgraph = document.getElementById("pgraph");
+			var styleString = "Styles\n";
+			styleString += 'color: ' + pgraph.style.color + "\n";
+			styleString += 'margin: ' + pgraph.style.margin + "\n";
+			styleString += 'padding: ' + pgraph.style.padding + "\n";
+			styleString += 'border: ' + pgraph.style.borderBottom + "\n";
+			styleString += 'width: ' + pgraph.style.width + "\n";
+			alert(styleString);
+
+			var computedStyle = getComputedStyle(pgraph);
+			var computedStyleString = "Computed Styles\n";
+			computedStyleString += 'color: ' + computedStyle.color + "\n";
+			computedStyleString += 'margin: ' + computedStyle.margin + "\n";
+			computedStyleString += 'padding: ' + computedStyle.padding + "\n";
+			computedStyleString += 'border: ' + computedStyle.borderBottom + "\n";
+			computedStyleString += 'width: ' + computedStyle.width + "\n";
+			alert(computedStyleString);
+			return false;
+		});
+		document.getElementById("setstyles").addEventListener("click", function() {
+			var pgraph = document.getElementById("pgraph");
+			pgraph.style.borderBottom = 'none';
+			pgraph.style.fontStyle = 'normal';
+			pgraph.style.width = 'auto';
+			pgraph.style.padding = 'auto';
+			pgraph.style.margin = 'auto';
+			return false;
+		});
+	}
+</script>
+<style>
+	#pgraph {
+		border-bottom:2px solid blue;
+		width:80%;
+		padding:10px;
+	}
+</style>
+</head>
+<body>
+<h1>Styles</h1>
+<p id="pgraph" style="margin:10px auto 30px auto">This is a paragraph</p>
+<button id="getstyles">Get Styles</button>
+<button id="setstyles">Set Styles</button>
+</body>
+</html>

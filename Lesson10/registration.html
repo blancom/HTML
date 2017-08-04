@@ -1,0 +1,176 @@
+<html>
+
+<head>
+  <script type="text/javascript">
+    function display() {
+      var name = document.form1.txtname.value;
+      if (name == "") {
+        alert("please enter name");
+        document.form1.txtname.focus();
+        return false;
+      }
+      var adress = document.form1.txtadress.value;
+      if (adress == "") {
+        alert("please enter adress");
+        document.form1.txtadress.focus();
+        return false;
+      }
+      var phone = document.form1.txtphoneno.value;
+      if (phone == "") {
+        alert("please enter phone no");
+        document.form1.txtphoneno.focus();
+
+        return false;
+      }
+      if (isNaN(phone)) {
+        alert("phone no must be numeric");
+        document.form1.txtphoneno.focus();
+        document.form1.txtphoneno.value = "";
+        return false;
+      }
+      if ((document.getElementById("r1").checked == false) && (document.getElementById("r2").checked == false)) {
+        alert("please select gender");
+        return false;
+      }
+      if ((document.getElementById("ch1").checked == false) && (document.getElementById("ch2").checked == false) && (document.getElementById("ch3").checked == false)) {
+        alert("please select qualification");
+        return false;
+      }
+      var password = document.form1.txtpassword.value;
+      if (password == "") {
+        alert("please enter password");
+        document.form1.txtpassword.focus();
+        return false;
+      }
+      var len = password.length;
+      if (len < 5) {
+        alert("password must have minimum 5 characters")
+        document.form1.txtpassword.value = "";
+        document.form1.txtpassword.focus();
+        return false;
+      }
+      var repassword = document.form1.txtrepassword.value;
+      if (repassword == "") {
+        alert("retype password");
+        document.form1.txtrepassword.focus();
+        return false;
+      }
+      if (password != repassword) {
+        alert("passwords doesnt match");
+        document.form1.txtrepassword.value = "";
+        document.form1.txtrepassword.focus();
+
+        return false;
+      }
+      var eemail = document.form1.txtemail.value;
+      var atposition = eemail.indexOf("@");
+      var dotposition = eemail.lastIndexOf(".");
+      if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= eemails.length) {
+        alert("Please enter a valid e-mail address ");
+        return false;
+      }
+
+
+      var country = document.form1.txtcountry.value;
+      if (country == "select") {
+        alert("please enter country");
+        document.form1.txtcountry.focus();
+        return false;
+      }
+
+    } //function
+  </script>
+
+  <style>
+    input {
+
+      padding: 4px 8px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 2px solid red;
+      border-radius: 4px;
+      background-color: lightblue;
+      color: white;
+    }
+
+    select {
+
+      padding: 5px 18px;
+      border: none;
+      border-radius: 4px;
+      background-color: #f1f1f1;
+    }
+
+    input[type=submit],
+    input[type=reset] {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 8px 22px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="Home.html">Home</a>|<a href="Contact.htm">Contact</a>|<a href="About.html">About</a>|<a href="Registration.html">Registration</a>
+  <h1 align="center"><font color="#000000">REGISTRATION FORM</font></h1>
+  <form name="form1" method="get" action="registeraction.html" onsubmit="return display()">
+    <table align="center" border="1">
+      <tr>
+        <td> Enter name</font>
+        </td>
+        <td><input type="text" name="txtname"></td>
+      </tr>
+      <tr>
+        <td>Address</td>
+        <td><textarea name="txtadress"></textarea></td>
+      </tr>
+      <tr>
+        <td>Phone no</td>
+        <td><input type="text" name="txtphoneno"></td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td><input type="radio" name=" gender" value="male" id="r1"> male <input type="radio" name="gender" value="female" id="r2">female</td>
+      </tr>
+      <tr>
+        <td>Qualification</td>
+        <td>
+          <input type="checkbox" name="q1" value="btech" id="ch1"> btech
+          <input type="checkbox" name="q2" value="Mcom" id="ch2">Mcom
+          <input type="checkbox" name="q3" value="Mca" id="ch3">Mca </td>
+      </tr>
+      <tr>
+        <td> Password</td>
+        <td><input type="password" name="txtpassword"></td>
+      </tr>
+      <tr>
+        <td>Retype Password</td>
+        <td><input type="password" name="txtrepassword"></td>
+      </tr>
+      <tr>
+        <td>Email id</td>
+        <td><input type="email" name="txtemail"></td>
+      </tr>
+      <tr>
+        <td>Select Country</td>
+        <td><select name="txtcountry">
+               <option value="select">select</option>
+               <option value="india">USA</option>
+               <option value="china">Canada</option>
+               <option value="pakistan">UK</option>
+             </select></td>
+      </tr>
+
+      <tr>
+        <td><input type="submit" name="button" value="submit"></td>
+        <td> <input name="reset" type="reset"></td>
+      </tr>
+    </table>
+  </form>
+</body>
+
+</html>

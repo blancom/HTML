@@ -1,0 +1,28 @@
+/* set anchor color and font-weight */
+
+a {
+  color: blue;
+  font-weight: bold
+}
+
+
+/* set hyperlink status colors */
+
+a:link {
+  color: red
+}
+
+a:visited {
+  color: gray
+}
+
+
+/* set interactive link colors */
+
+a:hover {
+  color: green
+}
+
+a:active {
+  color: orange
+}

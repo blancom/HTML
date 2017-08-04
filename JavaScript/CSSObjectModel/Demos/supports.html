@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Supports</title>
+<script>
+	window.onload = function() {
+		document.getElementById("checkit").addEventListener("click", function() {
+			var p = document.getElementById("p").value;
+			var v = document.getElementById("v").value;
+			if (CSS.supports(p, v)) {
+				alert('Your browser DOES support property ' + p + ' with value ' + v);
+			} else {
+				alert('Your browser does NOT support property ' + p + ' with value ' + v);
+			}
+			return false;
+		});
+	}
+</script>
+</head>
+<body>
+<h1>Supports</h1>
+<form action="#">
+	<input type="text" id="p" placeholder="Property"> <input type="text" id="v" placeholder="Value">
+	<button id="checkit">Check</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Checkboxes</title>
+<script>
+function validate(e){
+	var errors = [];
+	
+	if ( !checkCheckBox(document.getElementById("terms")) ) {
+		errors[errors.length] = "You must agree to the terms.";
+	}
+	
+	if (errors.length > 0) {
+		reportErrors(errors);
+		e.preventDefault();
+	}
+
+}function checkCheckBox(cb){
+	return cb.checked;
+}
+
+function reportErrors(errors){
+	var msg = "There were some problems...\n";
+	var numError;
+	for (var i = 0; i<errors.length; i++) {
+		numError = i + 1;
+		msg += "\n" + numError + ". " + errors[i];
+	}
+	alert(msg);
+}
+
+window.onload = function() {
+	document.getElementById("noicecreamform").addEventListener("submit", function(e){
+    	validate(e);
+	});
+}
+</script>
+</head>
+<body>
+<h1>Ice Cream Form</h1>
+<form method="post" action="Process.html" id="noicecreamform">
+	<input type="checkbox" name="terms" id="terms">
+	I understand that I'm really not going to get any ice cream.
+	<br><br>
+	<input type="submit" value="Place Order">
+</form>
+
+</body>
+</html>

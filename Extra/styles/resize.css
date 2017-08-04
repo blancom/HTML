@@ -1,0 +1,40 @@
+/* the resize property is new in CSS3 */
+
+@import "reset.css";
+
+/* Container Dimensions */
+
+div {
+  float: left;
+  margin: 10px;
+  height: 75px;
+  width: 75px;
+  background: #f00;
+  border: 1px solid #000
+}
+
+
+/* Resizable Container Without Scrollbars */
+
+div.nobars {
+  resize: both;
+  /* Safari & Google Chrome only. */
+  overflow: hidden;
+}
+
+
+/* Resizable Container With Scrollbars */
+
+div.bars {
+  resize: both;
+  /* Safari & Google Chrome only. */
+  overflow: auto;
+}
+
+
+/* Limit Resize Dimensions. */
+
+div.max {
+  max-height: 150px;
+  max-width: 150px
+}

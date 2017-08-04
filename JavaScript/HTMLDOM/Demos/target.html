@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../Styles/propagation.css">
+<script>
+	window.onload = function() {
+		document.getElementById('outer').addEventListener('click', function(e) {
+			findTarget(e);
+		});
+		document.getElementById('inner').addEventListener('click', function(e) {
+			findTarget(e);
+		});
+		document.getElementById('heading').addEventListener('click', function(e) {
+			findTarget(e);
+		});
+	}
+	
+	function findTarget(e) {
+		e.target.innerHTML += " | click | ";
+		e.stopPropagation();
+	}
+	
+</script>
+<title>Target</title>
+</head>
+<body>
+	<h1 id="heading">Target</h1>
+	<div id="outer">outer
+		<div id="inner">inner</div>
+	</div>
+</body>
+</html>

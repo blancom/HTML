@@ -1,0 +1,17 @@
+p {
+  background: yellow
+}
+
+img[src="../Images/viper-1.jpg"] {
+  float: right;
+  border: 3px dashed red
+}
+
+img[src="../Images/viper-2.jpg"] {
+  float: left;
+  border: 3px dashed blue
+}
+
+p.clear {
+  clear: left
+}

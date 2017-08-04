@@ -1,0 +1,21 @@
+span {
+  background: yellow;
+  text-align: center;
+}
+
+p {
+  background: url(tile.gif) fuchsia repeat;
+  height: 3.5em
+}
+
+p#x {
+  background-repeat: repeat-x
+}
+
+p#y {
+  background-repeat: repeat-y
+}
+
+p#no {
+  background-repeat: no-repeat
+}
